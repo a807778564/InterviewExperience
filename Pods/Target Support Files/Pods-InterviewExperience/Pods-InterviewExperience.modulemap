@@ -1,6 +1,0 @@
-framework module Pods_InterviewExperience {
-  umbrella header "Pods-InterviewExperience-umbrella.h"
-
-  export *
-  module * { export * }
-}
