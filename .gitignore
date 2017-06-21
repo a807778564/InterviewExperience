@@ -1,8 +1,11 @@
 # Xcode
 <<<<<<< HEAD
+<<<<<<< HEAD
 .DS_Store
 */build/*
 =======
+=======
+>>>>>>> a665a8408b8b749b92e2da9789bb6551a714859d
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
@@ -11,7 +14,10 @@ build/
 DerivedData/
 
 ## Various settings
+<<<<<<< HEAD
 >>>>>>> f2f0f821576c65348c310816f621a44fccc2f005
+=======
+>>>>>>> a665a8408b8b749b92e2da9789bb6551a714859d
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -20,6 +26,7 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
+<<<<<<< HEAD
 <<<<<<< HEAD
 xcuserdata
 profile
@@ -33,6 +40,8 @@ Pods
 Podfile.lock
 InterviewExperience.xcworkspace
 =======
+=======
+>>>>>>> a665a8408b8b749b92e2da9789bb6551a714859d
 xcuserdata/
 
 ## Other
@@ -46,6 +55,20 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
+<<<<<<< HEAD
+=======
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+.build/
+
+>>>>>>> a665a8408b8b749b92e2da9789bb6551a714859d
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
@@ -72,6 +95,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+<<<<<<< HEAD
 
 # Code Injection
 #
@@ -80,3 +104,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 >>>>>>> f2f0f821576c65348c310816f621a44fccc2f005
+=======
+>>>>>>> a665a8408b8b749b92e2da9789bb6551a714859d
