@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds);
         let tabController = UITabBarController();
+        //tab 背景
+        let tabBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: 49));
+        tabBackgroundView.backgroundColor = UIColor.white;
+        tabController.tabBar.insertSubview(tabBackgroundView, at: 0);
         tabController.viewControllers = initChilControllers() as? [UIViewController];
         tabController.tabBar.tintColor = RGBA(red: 47,green: 186,blue: 163,alpha: 1);
         self.window?.rootViewController = tabController;
@@ -46,6 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         controllers.add(UINavigationController(rootViewController: my));
         my.tabBarItem = UITabBarItem(title:"我", image: UIImage(named:"ie_tabbar_my_normal")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), selectedImage: UIImage(named:"ie_tabbar_my_selected")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal));
         my.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -4);
+        
+        let tabbar = UITabBar.appearance();
+        tabbar.backgroundImage = UIImage();
+        tabbar.shadowImage = UIImage.imageWithColor(color: BackColor, size: CGSize(width: ScreenWidth, height: 1));
         
         return controllers;
     }

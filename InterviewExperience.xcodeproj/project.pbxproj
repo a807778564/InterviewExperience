@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2CB7D09D1EFA1D2E00F4A160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7D09B1EFA1D2E00F4A160 /* Main.storyboard */; };
 		2CB7D09F1EFA1D2E00F4A160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7D09E1EFA1D2E00F4A160 /* Assets.xcassets */; };
 		2CB7D0A21EFA1D2E00F4A160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7D0A01EFA1D2E00F4A160 /* LaunchScreen.storyboard */; };
 		2CB7D0B01EFA260100F4A160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0AA1EFA260100F4A160 /* AppDelegate.swift */; };
@@ -17,13 +16,27 @@
 		2CB7D0BC1EFA41FF00F4A160 /* IEMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0BB1EFA41FF00F4A160 /* IEMessageController.swift */; };
 		2CB7D0BE1EFA421100F4A160 /* IEMyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0BD1EFA421100F4A160 /* IEMyController.swift */; };
 		2CB7D0C21EFA569B00F4A160 /* IEPublicDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0C11EFA569B00F4A160 /* IEPublicDefine.swift */; };
+		2CB7D0C61EFA649100F4A160 /* IEBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0C51EFA649100F4A160 /* IEBaseController.swift */; };
+		2CB7D0C91EFA6EE100F4A160 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0C81EFA6EE100F4A160 /* UIViewExtension.swift */; };
+		2CB7D0CC1EFB525900F4A160 /* IEEnumType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0CB1EFB525900F4A160 /* IEEnumType.swift */; };
+		2CB7D0D01EFB62B900F4A160 /* IEMyLoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0CF1EFB62B900F4A160 /* IEMyLoginCell.swift */; };
+		2CB7D0D21EFB710400F4A160 /* IELoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0D11EFB710400F4A160 /* IELoginController.swift */; };
+		2CB7D0D41EFB717A00F4A160 /* IEMy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7D0D31EFB717A00F4A160 /* IEMy.storyboard */; };
+		2CB7D0D61EFB9AC600F4A160 /* IEPhoneSureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0D51EFB9AC600F4A160 /* IEPhoneSureController.swift */; };
+		2CB7D0D81EFB9B0000F4A160 /* IERegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0D71EFB9B0000F4A160 /* IERegisterController.swift */; };
+		2CB7D0F21EFBAB6A00F4A160 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB7D0F11EFBAB6A00F4A160 /* SMS_SDK.framework */; };
+		2CB7D0F41EFBAB7700F4A160 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB7D0F31EFBAB7700F4A160 /* MOBFoundation.framework */; };
+		2CB7D0F51EFBAB9900F4A160 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB7D0D91EFB9FCF00F4A160 /* libz.tbd */; };
+		2CB7D0F61EFBABA400F4A160 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB7D0DB1EFB9FDB00F4A160 /* libicucore.tbd */; };
+		2CB7D0F71EFBABAB00F4A160 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB7D0DF1EFBA02B00F4A160 /* MessageUI.framework */; };
+		2CB7D0F81EFBABB200F4A160 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB7D0E11EFBA03600F4A160 /* JavaScriptCore.framework */; };
+		2CB7D0F91EFBABBC00F4A160 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB7D0DD1EFB9FF600F4A160 /* libstdc++.tbd */; };
 		79632411F89FD7D06CE7A6E3 /* Pods_InterviewExperience.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6555DC8E90752BBE0F68C6F8 /* Pods_InterviewExperience.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		052841A91C89B1AD44BD399F /* Pods-InterviewExperience.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewExperience.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewExperience/Pods-InterviewExperience.debug.xcconfig"; sourceTree = "<group>"; };
 		2CB7D0941EFA1D2E00F4A160 /* InterviewExperience.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewExperience.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CB7D09C1EFA1D2E00F4A160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CB7D09E1EFA1D2E00F4A160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CB7D0A11EFA1D2E00F4A160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB7D0AA1EFA260100F4A160 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +46,24 @@
 		2CB7D0BB1EFA41FF00F4A160 /* IEMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEMessageController.swift; sourceTree = "<group>"; };
 		2CB7D0BD1EFA421100F4A160 /* IEMyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEMyController.swift; sourceTree = "<group>"; };
 		2CB7D0C11EFA569B00F4A160 /* IEPublicDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEPublicDefine.swift; sourceTree = "<group>"; };
+		2CB7D0C51EFA649100F4A160 /* IEBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEBaseController.swift; sourceTree = "<group>"; };
+		2CB7D0C81EFA6EE100F4A160 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		2CB7D0CB1EFB525900F4A160 /* IEEnumType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEEnumType.swift; sourceTree = "<group>"; };
+		2CB7D0CF1EFB62B900F4A160 /* IEMyLoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEMyLoginCell.swift; sourceTree = "<group>"; };
+		2CB7D0D11EFB710400F4A160 /* IELoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IELoginController.swift; sourceTree = "<group>"; };
+		2CB7D0D31EFB717A00F4A160 /* IEMy.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IEMy.storyboard; sourceTree = "<group>"; };
+		2CB7D0D51EFB9AC600F4A160 /* IEPhoneSureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEPhoneSureController.swift; sourceTree = "<group>"; };
+		2CB7D0D71EFB9B0000F4A160 /* IERegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IERegisterController.swift; sourceTree = "<group>"; };
+		2CB7D0D91EFB9FCF00F4A160 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		2CB7D0DB1EFB9FDB00F4A160 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		2CB7D0DD1EFB9FF600F4A160 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		2CB7D0DF1EFBA02B00F4A160 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		2CB7D0E11EFBA03600F4A160 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		2CB7D0E31EFBA03D00F4A160 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2CB7D0E51EFBA04A00F4A160 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		2CB7D0F11EFBAB6A00F4A160 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		2CB7D0F31EFBAB7700F4A160 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		2CB7D0FA1EFBAE5400F4A160 /* ObjectC-Briding-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjectC-Briding-Header.h"; sourceTree = "<group>"; };
 		6555DC8E90752BBE0F68C6F8 /* Pods_InterviewExperience.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterviewExperience.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3ECAA097129BCA1D043DB3 /* Pods-InterviewExperience.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewExperience.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewExperience/Pods-InterviewExperience.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,6 +73,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB7D0F21EFBAB6A00F4A160 /* SMS_SDK.framework in Frameworks */,
+				2CB7D0F91EFBABBC00F4A160 /* libstdc++.tbd in Frameworks */,
+				2CB7D0F81EFBABB200F4A160 /* JavaScriptCore.framework in Frameworks */,
+				2CB7D0F71EFBABAB00F4A160 /* MessageUI.framework in Frameworks */,
+				2CB7D0F61EFBABA400F4A160 /* libicucore.tbd in Frameworks */,
+				2CB7D0F51EFBAB9900F4A160 /* libz.tbd in Frameworks */,
+				2CB7D0F41EFBAB7700F4A160 /* MOBFoundation.framework in Frameworks */,
 				79632411F89FD7D06CE7A6E3 /* Pods_InterviewExperience.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +112,9 @@
 				2CB7D0AF1EFA260100F4A160 /* Talk */,
 				2CB7D0AD1EFA260100F4A160 /* Message */,
 				2CB7D0AE1EFA260100F4A160 /* My */,
+				2CB7D0CA1EFB51FF00F4A160 /* Enum */,
+				2CB7D0C71EFA6E9B00F4A160 /* Extension */,
+				2CB7D0C31EFA644B00F4A160 /* Base */,
 				2CB7D0B21EFA262100F4A160 /* StoryBoard */,
 				2CB7D0A91EFA260100F4A160 /* Delegate */,
 				2CB7D09E1EFA1D2E00F4A160 /* Assets.xcassets */,
@@ -87,6 +128,7 @@
 				2CB7D0AA1EFA260100F4A160 /* AppDelegate.swift */,
 				2CB7D0AB1EFA260100F4A160 /* Info.plist */,
 				2CB7D0C11EFA569B00F4A160 /* IEPublicDefine.swift */,
+				2CB7D0FA1EFBAE5400F4A160 /* ObjectC-Briding-Header.h */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -110,6 +152,8 @@
 		2CB7D0AE1EFA260100F4A160 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				2CB7D0CD1EFB629100F4A160 /* Cells */,
+				2CB7D0CE1EFB629100F4A160 /* Views */,
 				2CB7D0B61EFA3C3D00F4A160 /* Controller */,
 			);
 			path = My;
@@ -126,7 +170,7 @@
 		2CB7D0B21EFA262100F4A160 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				2CB7D09B1EFA1D2E00F4A160 /* Main.storyboard */,
+				2CB7D0D31EFB717A00F4A160 /* IEMy.storyboard */,
 				2CB7D0A01EFA1D2E00F4A160 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoard;
@@ -163,9 +207,84 @@
 			isa = PBXGroup;
 			children = (
 				2CB7D0BD1EFA421100F4A160 /* IEMyController.swift */,
+				2CB7D0D11EFB710400F4A160 /* IELoginController.swift */,
+				2CB7D0D51EFB9AC600F4A160 /* IEPhoneSureController.swift */,
+				2CB7D0D71EFB9B0000F4A160 /* IERegisterController.swift */,
 			);
 			name = Controller;
 			path = controller;
+			sourceTree = "<group>";
+		};
+		2CB7D0C31EFA644B00F4A160 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2CB7D0C41EFA644B00F4A160 /* Controller */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2CB7D0C41EFA644B00F4A160 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2CB7D0C51EFA649100F4A160 /* IEBaseController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2CB7D0C71EFA6E9B00F4A160 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2CB7D0C81EFA6EE100F4A160 /* UIViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2CB7D0CA1EFB51FF00F4A160 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				2CB7D0CB1EFB525900F4A160 /* IEEnumType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		2CB7D0CD1EFB629100F4A160 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2CB7D0CF1EFB62B900F4A160 /* IEMyLoginCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2CB7D0CE1EFB629100F4A160 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2CB7D0EE1EFBAB4B00F4A160 /* SMSSDK */ = {
+			isa = PBXGroup;
+			children = (
+				2CB7D0EF1EFBAB4B00F4A160 /* Required */,
+				2CB7D0F01EFBAB4B00F4A160 /* SMSSDK */,
+			);
+			path = SMSSDK;
+			sourceTree = "<group>";
+		};
+		2CB7D0EF1EFBAB4B00F4A160 /* Required */ = {
+			isa = PBXGroup;
+			children = (
+				2CB7D0F31EFBAB7700F4A160 /* MOBFoundation.framework */,
+			);
+			path = Required;
+			sourceTree = "<group>";
+		};
+		2CB7D0F01EFBAB4B00F4A160 /* SMSSDK */ = {
+			isa = PBXGroup;
+			children = (
+				2CB7D0F11EFBAB6A00F4A160 /* SMS_SDK.framework */,
+			);
+			path = SMSSDK;
 			sourceTree = "<group>";
 		};
 		A718A1A4224813E658B358AC /* Pods */ = {
@@ -180,6 +299,14 @@
 		BCECED2B611CA8716793B5EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CB7D0EE1EFBAB4B00F4A160 /* SMSSDK */,
+				2CB7D0E51EFBA04A00F4A160 /* CoreTelephony.framework */,
+				2CB7D0E31EFBA03D00F4A160 /* SystemConfiguration.framework */,
+				2CB7D0E11EFBA03600F4A160 /* JavaScriptCore.framework */,
+				2CB7D0DF1EFBA02B00F4A160 /* MessageUI.framework */,
+				2CB7D0DD1EFB9FF600F4A160 /* libstdc++.tbd */,
+				2CB7D0DB1EFB9FDB00F4A160 /* libicucore.tbd */,
+				2CB7D0D91EFB9FCF00F4A160 /* libz.tbd */,
 				6555DC8E90752BBE0F68C6F8 /* Pods_InterviewExperience.framework */,
 			);
 			name = Frameworks;
@@ -250,8 +377,8 @@
 			files = (
 				2CB7D0B11EFA260100F4A160 /* Info.plist in Resources */,
 				2CB7D0A21EFA1D2E00F4A160 /* LaunchScreen.storyboard in Resources */,
+				2CB7D0D41EFB717A00F4A160 /* IEMy.storyboard in Resources */,
 				2CB7D09F1EFA1D2E00F4A160 /* Assets.xcassets in Resources */,
-				2CB7D09D1EFA1D2E00F4A160 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,26 +438,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CB7D0B81EFA41DE00F4A160 /* IEMainController.swift in Sources */,
+				2CB7D0D61EFB9AC600F4A160 /* IEPhoneSureController.swift in Sources */,
+				2CB7D0D01EFB62B900F4A160 /* IEMyLoginCell.swift in Sources */,
+				2CB7D0CC1EFB525900F4A160 /* IEEnumType.swift in Sources */,
 				2CB7D0B01EFA260100F4A160 /* AppDelegate.swift in Sources */,
 				2CB7D0BA1EFA41F000F4A160 /* IETalkController.swift in Sources */,
+				2CB7D0D21EFB710400F4A160 /* IELoginController.swift in Sources */,
+				2CB7D0D81EFB9B0000F4A160 /* IERegisterController.swift in Sources */,
 				2CB7D0BE1EFA421100F4A160 /* IEMyController.swift in Sources */,
+				2CB7D0C61EFA649100F4A160 /* IEBaseController.swift in Sources */,
 				2CB7D0BC1EFA41FF00F4A160 /* IEMessageController.swift in Sources */,
 				2CB7D0C21EFA569B00F4A160 /* IEPublicDefine.swift in Sources */,
+				2CB7D0C91EFA6EE100F4A160 /* UIViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2CB7D09B1EFA1D2E00F4A160 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CB7D09C1EFA1D2E00F4A160 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		2CB7D0A01EFA1D2E00F4A160 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,6 +569,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 784U2EBW65;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SMSSDK/Required",
+					"$(PROJECT_DIR)/SMSSDK/SMSSDK",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/InterviewExperience/Delegate/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -451,6 +581,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "692e6367-a3e5-45fb-be83-935ccdb5cde2";
 				PROVISIONING_PROFILE_SPECIFIER = DevForHomedo;
+				SWIFT_OBJC_BRIDGING_HEADER = "InterviewExperience/Delegate/ObjectC-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -461,12 +592,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SMSSDK/Required",
+					"$(PROJECT_DIR)/SMSSDK/SMSSDK",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/InterviewExperience/Delegate/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.homedo.InterviewExperience;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "InterviewExperience/Delegate/ObjectC-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
