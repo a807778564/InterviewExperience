@@ -46,13 +46,11 @@ class IEPhoneSureController: IEBaseController {
             return;
         }
         
-        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timeDown), userInfo: nil, repeats: true);
-        
         SMSSDK.getVerificationCode(by: SMSGetCodeMethodSMS, phoneNumber: self.phoneNumber.text, zone: "86") { (error) in
             if(error == nil){
-                print("发送成功");
+                self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.timeDown), userInfo: nil, repeats: true);
             }else{
-                print("发送失败");
+                self.view.showTost(text: "发送失败!")
             }
         }
     }
@@ -70,10 +68,9 @@ class IEPhoneSureController: IEBaseController {
         
         SMSSDK.commitVerificationCode(self.messageCode.text, phoneNumber: self.phoneNumber.text, zone: "86") { (error) in
             if (error == nil){
-                print("验证成功");
-//                self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+                self.navigationController?.pushViewController(self.createViewController(_SBName: "IEMy", identifier: "IERegisterController", param: self.phoneNumber.text), animated: true)
             }else{
-                print("验证失败");
+                print("短信验证码错误！");
             }
         }
     }
