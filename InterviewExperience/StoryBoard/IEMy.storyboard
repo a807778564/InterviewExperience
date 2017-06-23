@@ -273,6 +273,7 @@
                     </view>
                     <connections>
                         <outlet property="passWord" destination="yQH-mV-KSu" id="ZDd-6C-MuH"/>
+                        <outlet property="registerBtn" destination="gYG-uC-tek" id="JmY-Ex-h1I"/>
                         <outlet property="surePass" destination="foD-U5-UTm" id="meg-xy-KRB"/>
                         <outlet property="userName" destination="XLH-z0-OEC" id="1bl-fx-Kq8"/>
                     </connections>

@@ -29,7 +29,7 @@ class IEPhoneSureController: IEBaseController {
         self.messageCode.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 44));
         self.messageCode.leftViewMode = UITextFieldViewMode.always;
         
-        self.getPhoneCode.setLayer(cornerRadiu: 4, borderColor: UIColor.white, width: 1);
+        self.getPhoneCode.setLayer(cornerRadiu: 4, borderColor: UIColor.clear, width: 1);
         self.nextBtn.setLayer(cornerRadiu: 4, borderColor: TinColor, width: 1);
         // Do any additional setup after loading the view.
     }
@@ -58,7 +58,7 @@ class IEPhoneSureController: IEBaseController {
     
     @IBAction func doNextAction(_ sender: UIButton) {
         if (self.phoneNumber.text?.isEmpty)! {
-            self.view.showTost(text: "手机号码不能为空!");
+            self.view.showTost(text: "请输入手机号码!");
             return;
         }
         if (self.messageCode.text?.isEmpty)! {
@@ -70,7 +70,7 @@ class IEPhoneSureController: IEBaseController {
             if (error == nil){
                 self.navigationController?.pushViewController(self.createViewController(_SBName: "IEMy", identifier: "IERegisterController", param: self.phoneNumber.text), animated: true)
             }else{
-                print("短信验证码错误！");
+                self.view.showTost(text: "短信验证码错误！");
             }
         }
     }
