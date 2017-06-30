@@ -30,7 +30,7 @@ class IEPhoneSureController: IEBaseController {
         self.messageCode.leftViewMode = UITextFieldViewMode.always;
         
         self.getPhoneCode.setLayer(cornerRadiu: 4, borderColor: UIColor.clear, width: 1);
-        self.nextBtn.setLayer(cornerRadiu: 4, borderColor: TinColor, width: 1);
+        self.nextBtn.setLayer(cornerRadiu: 4, borderColor: UIColor.clear, width: 1);
         // Do any additional setup after loading the view.
     }
     
@@ -50,6 +50,7 @@ class IEPhoneSureController: IEBaseController {
             if(error == nil){
                 self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.timeDown), userInfo: nil, repeats: true);
             }else{
+                
                 self.view.showTost(text: "发送失败!")
             }
         }

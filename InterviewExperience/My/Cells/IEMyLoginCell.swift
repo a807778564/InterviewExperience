@@ -9,7 +9,13 @@
 import UIKit
 
 class IEMyLoginCell: UITableViewCell {
-
+    var userInfo:IEUserModel?{
+        didSet{
+            self.titleLabel.text = userInfo?.userName;
+            self.desLabel.text = userInfo?.phoneNumber;
+        }
+    }
+    
     var icon = UIImageView(image: UIImage(named: "ie_icon_my_default"));
     var rightArrow = UIImageView(image: UIImage(named: "ie_icon_right_arrow"));
     var titleLabel = UILabel.label(text: "登录/注册", textColor: LabelMainColor, font: 15);
@@ -52,6 +58,7 @@ class IEMyLoginCell: UITableViewCell {
         }
         
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

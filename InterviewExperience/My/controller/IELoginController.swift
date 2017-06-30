@@ -27,13 +27,30 @@ class IELoginController: IEBaseController {
         self.passWord.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 44));
         self.passWord.leftViewMode = UITextFieldViewMode.always;
         
-        self.lognBtn.setLayer(cornerRadiu: 4, borderColor:TinColor , width: 1);
+        self.lognBtn.setLayer(cornerRadiu: 4, borderColor:UIColor.clear , width: 1);
         // Do any additional setup after loading the view.
     }
 
     
     
     @IBAction func loginBtnOnClick(_ sender: UIButton) {
+        if (self.userName.text?.isEmpty)! {
+            hudShowText(message: "请输入用户名");
+            return;
+        }
+        if (self.passWord.text?.isEmpty)! {
+            hudShowText(message: "请输入密码");
+            return;
+        }
+        let params = NSMutableDictionary();
+        params.setValue(self.userName.text, forKey: "userName");
+        params.setValue(self.passWord.text, forKey: "passWord");
+        IEHttpManager.dataRquest(url: "login", params: params,hudShow:false, method: IEHttpMethod.POST, success: { (data:Any?) in
+            UserDefaults.standard.set(data, forKey: "token");
+            self.navigationController?.popViewController(animated: true);
+        }) { (error:Error?) in
+            
+        }
         
     }
     

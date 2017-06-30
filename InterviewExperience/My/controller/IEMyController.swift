@@ -12,6 +12,8 @@ import Masonry
 class IEMyController: IEBaseController,UITableViewDelegate,UITableViewDataSource {
     
     var myTable = UITableView(frame: CGRect.zero, style: UITableViewStyle.grouped);
+    var userInfo:IEUserModel? = nil;
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +28,18 @@ class IEMyController: IEBaseController,UITableViewDelegate,UITableViewDataSource
         self.myTable.mas_makeConstraints { (make) in
             make?.edges.equalTo()(self.view);
         }
-//        setBackArrow(imageName: "ie_nav_back_arrow",position: IENavItem.Left);
-//        setRightButtonByName(_name: "登录", _color: UIColor.white)
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        if (userInfo==nil && UserDefaults.standard.value(forKey: "token") != nil){
+            IEHttpManager.dataRquest(url: "userInfo", params: NSMutableDictionary(), hudShow: true, method: IEHttpMethod.POST, success: { (data:Any?) in
+                self.userInfo = try!IEUserModel(dictionary: data as! [AnyHashable : Any]);
+                self.myTable.reloadData();
+            }, error: { (error:Error?) in
+                
+            })
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,10 +62,11 @@ class IEMyController: IEBaseController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section==0 {
-            var cell = tableView.dequeueReusableCell(withIdentifier: "IELoginCell");
+            var cell:IEMyLoginCell? = tableView.dequeueReusableCell(withIdentifier: "IELoginCell") as? IEMyLoginCell;
             if (cell == nil) {
                 cell = IEMyLoginCell(style: UITableViewCellStyle.default, reuseIdentifier: "IELoginCell");
             }
+            cell?.userInfo = self.userInfo;
             return cell!;
         }
         return UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "inde");

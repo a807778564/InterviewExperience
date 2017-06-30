@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 
 let ScreenWidth = UIScreen.main.bounds.width;//屏幕宽
@@ -52,6 +53,11 @@ func getNewTextSize(_text:NSString,_font:CGFloat,_width:Int) -> CGSize{
     return _text.boundingRect(with: CGSize(width:_width,height:10000), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: attribute as? [String : Any], context: nil).size;
 }
 
+
+/// 检查手机号码的正则表达式
+///
+/// - Parameter tel: 电话号码
+/// - Returns: 是否符合格式
 func checkTelNumber(tel:NSString) -> Bool{
     if (tel.isEqual(to: "")){
         return false;
@@ -63,6 +69,50 @@ func checkTelNumber(tel:NSString) -> Bool{
     let r = regex.firstMatch(in: tel as String, options: [], range:NSRange(location: 0, length: tel.length))
     return r != nil;
 }
+
+func hudShowText(message:String){
+    let hud = MBProgressHUD.showAdded(to: AppDelegate.shareDelegate().window, animated: true);
+    hud?.mode = MBProgressHUDMode.text;
+    hud?.color = RGBA(red: 105, green: 105, blue: 105, alpha: 1);
+    hud?.detailsLabelText = message;
+    hud?.detailsLabelFont = UIFont.systemFont(ofSize: 12);
+    hud?.margin = 10;
+    hud?.removeFromSuperViewOnHide = true;
+    hud?.hide(true, afterDelay: 1);
+}
+
+var loading:MBProgressHUD?
+func hudShowLoading(){
+    loading = MBProgressHUD.showAdded(to: AppDelegate.shareDelegate().window, animated: true);
+    loading?.detailsLabelText = "加载中";
+    loading?.detailsLabelFont = UIFont.systemFont(ofSize: 12);
+    loading?.margin = 10;
+    loading?.removeFromSuperViewOnHide = true;
+}
+
+func hudHidden(){
+    loading?.hide(true, afterDelay: 0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -42,15 +42,15 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMr-7x-Ktn">
                                 <rect key="frame" x="16" y="183" width="343" height="44"/>
-                                <color key="backgroundColor" red="0.18431372549019609" green="0.72941176470588232" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="GwM-6a-3l5"/>
                                 </constraints>
-                                <state key="normal" title="登录"/>
+                                <state key="normal" title="登录" backgroundImage="ie_btn_back_normal"/>
+                                <state key="highlighted" backgroundImage="ie_btn_back_hight"/>
                                 <connections>
                                     <action selector="loginBtnOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="51l-fi-Ekg"/>
                                 </connections>
@@ -151,11 +151,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qQ-Do-0tI">
                                 <rect key="frame" x="16" y="183" width="343" height="44"/>
-                                <color key="backgroundColor" red="0.1843137255" green="0.72941176470000002" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="dLo-su-kXt"/>
                                 </constraints>
-                                <state key="normal" title="下一步"/>
+                                <state key="normal" title="下一步" backgroundImage="ie_btn_back_normal"/>
+                                <state key="highlighted" backgroundImage="ie_btn_back_hight"/>
                                 <connections>
                                     <action selector="doNextAction:" destination="cNR-Z9-phq" eventType="touchUpInside" id="Sst-Sx-Sj4"/>
                                 </connections>
@@ -230,7 +230,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="确认密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foD-U5-UTm">
                                 <rect key="frame" x="0.0" y="168" width="375" height="44"/>
@@ -241,15 +241,15 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYG-uC-tek">
                                 <rect key="frame" x="16" y="237" width="343" height="44"/>
-                                <color key="backgroundColor" red="0.1843137255" green="0.72941176470000002" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ZF7-5t-uLS"/>
                                 </constraints>
-                                <state key="normal" title="注册"/>
+                                <state key="normal" title="注册" backgroundImage="ie_btn_back_normal"/>
+                                <state key="highlighted" backgroundImage="ie_btn_back_hight"/>
                                 <connections>
                                     <action selector="registerAction:" destination="yMP-gl-RJS" eventType="touchUpInside" id="n6V-pw-cqT"/>
                                 </connections>
@@ -283,4 +283,8 @@
             <point key="canvasLocation" x="1228" y="70"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ie_btn_back_hight" width="414" height="44"/>
+        <image name="ie_btn_back_normal" width="414" height="44"/>
+    </resources>
 </document>
