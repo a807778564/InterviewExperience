@@ -26,6 +26,12 @@ class IENetWorkRequest: NSObject {
         let sess = URLSession.shared;
         let task = sess.dataTask(with: request as URLRequest) { (data:Data?, response:URLResponse?, error:Error?) in
             DispatchQueue.main.async(execute: {
+                if(data==nil){
+                    hudHidden();
+                    hudShowText(message: "请求失败");
+                    errorBlock(error)
+                    return;
+                }
                 let datastring: String = String(data:data!, encoding:String.Encoding.utf8)!
                 let jsonData = datastring.replacingOccurrences(of: "null", with: "\"\"");//JSONSerialization 不能解析null 替换null为“”字符串
                 let dataJson = jsonData.data(using: String.Encoding.utf8);
@@ -88,6 +94,12 @@ class IENetWorkRequest: NSObject {
         request.httpBody = postBody(params: param);
         let  task = session.dataTask(with:request as URLRequest) { (data:Data?, response:URLResponse?,error:Error?) in
             DispatchQueue.main.async(execute: {
+                if(data==nil){
+                    hudHidden();
+                    hudShowText(message: "请求失败");
+                    errorBlock(error)
+                    return;
+                }
                 let datastring: String = String(data:data!, encoding:String.Encoding.utf8)!
                 let jsonData = datastring.replacingOccurrences(of: "null", with: "\"\"");//JSONSerialization 不能解析null 替换null为“”字符串
                 let dataJson = jsonData.data(using: String.Encoding.utf8);

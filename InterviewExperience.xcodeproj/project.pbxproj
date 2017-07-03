@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C2DE28E1F0A226A00FA143F /* IESettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2DE28D1F0A226A00FA143F /* IESettingController.swift */; };
 		2C38205E1F0275BD0076210B /* IEHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38205D1F0275BD0076210B /* IEHttpManager.swift */; };
 		2C3820601F0277B40076210B /* IENetWorkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38205F1F0277B40076210B /* IENetWorkRequest.swift */; };
 		2C60579C1F0629FC0015A7D4 /* IEUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60579B1F0629FB0015A7D4 /* IEUserModel.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		052841A91C89B1AD44BD399F /* Pods-InterviewExperience.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewExperience.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewExperience/Pods-InterviewExperience.debug.xcconfig"; sourceTree = "<group>"; };
+		2C2DE28D1F0A226A00FA143F /* IESettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IESettingController.swift; sourceTree = "<group>"; };
 		2C38205D1F0275BD0076210B /* IEHttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEHttpManager.swift; sourceTree = "<group>"; };
 		2C38205F1F0277B40076210B /* IENetWorkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IENetWorkRequest.swift; sourceTree = "<group>"; };
 		2C60579B1F0629FB0015A7D4 /* IEUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEUserModel.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				2CB7D0D11EFB710400F4A160 /* IELoginController.swift */,
 				2CB7D0D51EFB9AC600F4A160 /* IEPhoneSureController.swift */,
 				2CB7D0D71EFB9B0000F4A160 /* IERegisterController.swift */,
+				2C2DE28D1F0A226A00FA143F /* IESettingController.swift */,
 			);
 			name = Controller;
 			path = controller;
@@ -485,6 +488,7 @@
 				2CB7D0BE1EFA421100F4A160 /* IEMyController.swift in Sources */,
 				2CB7D0C61EFA649100F4A160 /* IEBaseController.swift in Sources */,
 				2C60579C1F0629FC0015A7D4 /* IEUserModel.swift in Sources */,
+				2C2DE28E1F0A226A00FA143F /* IESettingController.swift in Sources */,
 				2C3820601F0277B40076210B /* IENetWorkRequest.swift in Sources */,
 				2CB7D0BC1EFA41FF00F4A160 /* IEMessageController.swift in Sources */,
 				2C38205E1F0275BD0076210B /* IEHttpManager.swift in Sources */,

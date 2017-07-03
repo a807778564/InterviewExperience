@@ -32,6 +32,7 @@ class IEMyController: IEBaseController,UITableViewDelegate,UITableViewDataSource
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
+//        let token:String = UserDefaults.standard.value(forKey: "token") as! String;
         if (userInfo==nil && UserDefaults.standard.value(forKey: "token") != nil){
             IEHttpManager.dataRquest(url: "userInfo", params: NSMutableDictionary(), hudShow: true, method: IEHttpMethod.POST, success: { (data:Any?) in
                 self.userInfo = try!IEUserModel(dictionary: data as! [AnyHashable : Any]);
@@ -39,6 +40,8 @@ class IEMyController: IEBaseController,UITableViewDelegate,UITableViewDataSource
             }, error: { (error:Error?) in
                 
             })
+        }else{
+            self.myTable.reloadData();
         }
     }
     
@@ -73,8 +76,12 @@ class IEMyController: IEBaseController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            self.navigationController?.pushViewController(self.createViewController(_SBName: "IEMy", identifier: "IELoginController", param: nil), animated: true);
+        if (indexPath.section == 0){
+            if(UserDefaults.standard.value(forKey: "token") == nil){
+                self.navigationController?.pushViewController(self.createViewController(_SBName: "IEMy", identifier: "IELoginController", param: nil), animated: true);
+            }else{
+                self.navigationController?.pushViewController(self.createViewController(_SBName: "IEMy", identifier: "IESettingController", param: nil), animated: true);
+            }
         }
     }
     

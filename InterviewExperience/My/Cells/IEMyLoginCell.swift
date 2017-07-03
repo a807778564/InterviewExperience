@@ -11,8 +11,13 @@ import UIKit
 class IEMyLoginCell: UITableViewCell {
     var userInfo:IEUserModel?{
         didSet{
-            self.titleLabel.text = userInfo?.userName;
-            self.desLabel.text = userInfo?.phoneNumber;
+            if(userInfo != nil){
+                self.titleLabel.text = userInfo?.userName;
+                self.desLabel.text = userInfo?.phoneNumber;
+            }else{
+                self.titleLabel.text = "登录/注册";
+                self.desLabel.text = "登陆后查看更多信息>>";
+            }
         }
     }
     

@@ -10,6 +10,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Setting Controller-->
+        <scene sceneID="TOJ-DB-hkD">
+            <objects>
+                <viewController storyboardIdentifier="IESettingController" hidesBottomBarWhenPushed="YES" id="3Q0-LO-Wrg" customClass="IESettingController" customModule="InterviewExperience" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="974-gK-HXo"/>
+                        <viewControllerLayoutGuide type="bottom" id="H9U-Ih-GnN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OUt-6S-Hht">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Jt-of-tGc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3Q0-LO-Wrg" id="E2V-ov-Kol"/>
+                                    <outlet property="delegate" destination="3Q0-LO-Wrg" id="D8m-rl-74b"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H9U-Ih-GnN" firstAttribute="top" secondItem="1Jt-of-tGc" secondAttribute="bottom" id="GjM-8r-hRB"/>
+                            <constraint firstItem="1Jt-of-tGc" firstAttribute="leading" secondItem="OUt-6S-Hht" secondAttribute="leading" id="egJ-kz-zqc"/>
+                            <constraint firstAttribute="trailing" secondItem="1Jt-of-tGc" secondAttribute="trailing" id="lws-He-xLk"/>
+                            <constraint firstItem="1Jt-of-tGc" firstAttribute="top" secondItem="OUt-6S-Hht" secondAttribute="top" id="vnz-pG-X66"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="settingTable" destination="1Jt-of-tGc" id="jX6-lr-GeT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KqH-kv-hzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20" y="-565.36731634182911"/>
+        </scene>
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
