@@ -24,18 +24,14 @@ class IEHttpManager: NSObject {
         }
         if method==IEHttpMethod.GET {
             ieNet.requestWithGet(param: params, url: baseUrl+url, success: { (data:AnyObject?) in
-                hudHidden();
                 success(data?.value(forKey: "data"));
             }, errorBlock: { (err:Error?) in
-                hudHidden();
                 error(err)
             })
         }else{
             ieNet.requestWithPost(param: params, url: baseUrl+url, success: { (data:AnyObject?) in
-                hudHidden();
                 success(data?.value(forKey: "data"));
             }, errorBlock: { (err:Error?) in
-                hudHidden();
                 error(err)
             })
         }

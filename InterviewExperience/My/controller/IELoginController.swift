@@ -55,12 +55,11 @@ class IELoginController: IEBaseController {
     }
     
     @IBAction func registerNow(_ sender: UIButton) {
-        self.navigationController?.pushViewController(self.createViewController(_SBName: "IEMy", identifier: "IEPhoneSureController",param: nil), animated: true)
+        self.navigationController?.pushViewController(self.createViewController(_SBName: "IEMy", identifier: "IEPhoneSureController",param: IEPhoneType.Register), animated: true)
     }
     
     @IBAction func forgetPass(_ sender: UIButton) {
-        
-        
+        self.navigationController?.pushViewController(self.createViewController(_SBName: "IEMy", identifier: "IEPhoneSureController",param: IEPhoneType.FindPass), animated: true)
     }
     
     override func didReceiveMemoryWarning() {

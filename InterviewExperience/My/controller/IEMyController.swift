@@ -13,7 +13,8 @@ class IEMyController: IEBaseController,UITableViewDelegate,UITableViewDataSource
     
     var myTable = UITableView(frame: CGRect.zero, style: UITableViewStyle.grouped);
     var userInfo:IEUserModel? = nil;
-    
+    let oneArray = NSArray(objects:"保密经验","经验收藏","话题收藏","分享APP","清除缓存","意见反馈");
+    let twoArray = NSArray(objects:"ie_my_private","ie_my_collection","ie_my_talk","ie_my_share","ie_my_clear","ie_my_feedback");
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,6 @@ class IEMyController: IEBaseController,UITableViewDelegate,UITableViewDataSource
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-//        let token:String = UserDefaults.standard.value(forKey: "token") as! String;
         if (userInfo==nil && UserDefaults.standard.value(forKey: "token") != nil){
             IEHttpManager.dataRquest(url: "userInfo", params: NSMutableDictionary(), hudShow: true, method: IEHttpMethod.POST, success: { (data:Any?) in
                 self.userInfo = try!IEUserModel(dictionary: data as! [AnyHashable : Any]);
@@ -40,7 +40,8 @@ class IEMyController: IEBaseController,UITableViewDelegate,UITableViewDataSource
             }, error: { (error:Error?) in
                 
             })
-        }else{
+        }else if(UserDefaults.standard.value(forKey: "token") == nil){
+            userInfo = nil;
             self.myTable.reloadData();
         }
     }
@@ -71,8 +72,18 @@ class IEMyController: IEBaseController,UITableViewDelegate,UITableViewDataSource
             }
             cell?.userInfo = self.userInfo;
             return cell!;
+        }else{//else if(indexPath.section==1)
+            var cell:IEMyNormalCell? = tableView.dequeueReusableCell(withIdentifier: "IEMyNormalCell") as? IEMyNormalCell;
+            if (cell == nil) {
+                cell = IEMyNormalCell(style: UITableViewCellStyle.default, reuseIdentifier: "IEMyNormalCell");
+            }
+            if indexPath.section==1{
+                cell?.setTitleAndIcon(icon: twoArray[indexPath.row] as! String, title: oneArray[indexPath.row] as! String);
+            }else{
+                cell?.setTitleAndIcon(icon: twoArray[indexPath.row+3] as! String, title: oneArray[indexPath.row+3] as! String);
+            }
+            return cell!;
         }
-        return UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "inde");
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

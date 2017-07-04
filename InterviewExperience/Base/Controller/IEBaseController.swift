@@ -11,7 +11,7 @@ import UIKit
 
 class IEBaseController: UIViewController {
     
-    public var params:Any?;
+    public var createParam:Any?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class IEBaseController: UIViewController {
         let storyboard = UIStoryboard(name: _SBName, bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier:identifier);
         let baVc = vc as? IEBaseController;
-        baVc?.params = param;
+        baVc?.createParam = param;
         return vc;
     }
     

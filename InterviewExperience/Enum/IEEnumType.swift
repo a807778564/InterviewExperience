@@ -16,3 +16,13 @@ enum IENavItem:Int {
     case Left = 1001
     case Right = 1002
 }
+
+
+/// 验证短信的类型
+///
+/// - Register: 注册
+/// - FindPass: 找回密码
+enum IEPhoneType:Int {
+    case Register = 100001
+    case FindPass = 100002
+}

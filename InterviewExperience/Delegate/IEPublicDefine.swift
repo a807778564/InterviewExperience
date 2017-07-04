@@ -22,6 +22,9 @@ let LabelMainColor = RGBA(red: 155, green: 155, blue: 155, alpha: 1);
 
 let LabelDesColor = RGBA(red: 200, green: 200, blue: 200, alpha: 1);
 
+let LineColor = RGBA(red: 235, green: 235, blue: 235, alpha: 1);
+
+
 
 
 /// RGB颜色

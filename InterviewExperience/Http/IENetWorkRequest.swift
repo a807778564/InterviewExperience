@@ -19,6 +19,14 @@ class IENetWorkRequest: NSObject {
     
     private override init() {};//禁止外部实例化
     
+    
+    /// GET网络请求
+    ///
+    /// - Parameters:
+    ///   - param: 请求参数
+    ///   - url: 请求地址
+    ///   - success: 成功返回
+    ///   - errorBlock: 失败信息
     public func requestWithGet(param:NSMutableDictionary,url:String,success:@escaping (AnyObject?) ->Void,errorBlock:@escaping (Error?) ->Void) -> Void {
         let appendUrl = getUrlWithParam(param: param, url: url);
         let requestUrl = NSURL(string: appendUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!);
@@ -26,38 +34,23 @@ class IENetWorkRequest: NSObject {
         let sess = URLSession.shared;
         let task = sess.dataTask(with: request as URLRequest) { (data:Data?, response:URLResponse?, error:Error?) in
             DispatchQueue.main.async(execute: {
-                if(data==nil){
-                    hudHidden();
-                    hudShowText(message: "请求失败");
-                    errorBlock(error)
-                    return;
-                }
-                let datastring: String = String(data:data!, encoding:String.Encoding.utf8)!
-                let jsonData = datastring.replacingOccurrences(of: "null", with: "\"\"");//JSONSerialization 不能解析null 替换null为“”字符串
-                let dataJson = jsonData.data(using: String.Encoding.utf8);
-                
-                print("response:"+String(data:dataJson!, encoding:String.Encoding.utf8)!);
-                
-                if(String(data:dataJson!, encoding:String.Encoding.utf8)!.hasPrefix("{")||String(data:dataJson!, encoding:String.Encoding.utf8)!.hasPrefix("[")){
-                    let dict = try! JSONSerialization.jsonObject(with: dataJson!, options: JSONSerialization.ReadingOptions.mutableLeaves)
-                    if(((dict as AnyObject).value(forKey: "code") as AnyObject).integerValue == 1){
-                        success(dict as AnyObject)
-                    }else{
-                        if(((dict as AnyObject).value(forKey: "code") as AnyObject).integerValue == 0){
-                            hudHidden();
-                            hudShowText(message: (dict as AnyObject).value(forKey: "message") as! String);
-                        }
-                        errorBlock(error)
-                    }
-                }else{
-                    hudShowText(message: "请求失败");
-                    errorBlock(error)
-                }
+                self.handleReponseData(data:data, error: error, success: { (succData:AnyObject?) in
+                    success(succData);
+                }, errorBlock: { (err:Error?) in
+                    errorBlock(err);
+                })
             })
         }
         task.resume();
     }
     
+    
+    /// 拼接GET请求URL
+    ///
+    /// - Parameters:
+    ///   - param: 请求参数
+    ///   - url: 访问地址
+    /// - Returns: 返回拼接好的GET请求参数
     private func getUrlWithParam(param:NSMutableDictionary,url:String) -> String {
         var getUrl = url;
         if param.allKeys.count<=0 {
@@ -86,6 +79,13 @@ class IENetWorkRequest: NSObject {
     }
     
     
+    /// POST网络请求
+    ///
+    /// - Parameters:
+    ///   - param: 请求参数
+    ///   - url: 请求地址
+    ///   - success: 成功信息
+    ///   - errorBlock: 失败信息
     public func requestWithPost(param:NSMutableDictionary,url:String,success:@escaping (AnyObject?) ->Void,errorBlock:@escaping (Error?) ->Void) -> Void {
         let session = URLSession.shared;
         let request = NSMutableURLRequest(url:URL(string: url)!);
@@ -94,51 +94,20 @@ class IENetWorkRequest: NSObject {
         request.httpBody = postBody(params: param);
         let  task = session.dataTask(with:request as URLRequest) { (data:Data?, response:URLResponse?,error:Error?) in
             DispatchQueue.main.async(execute: {
-                if(data==nil){
-                    hudHidden();
-                    hudShowText(message: "请求失败");
-                    errorBlock(error)
-                    return;
-                }
-                let datastring: String = String(data:data!, encoding:String.Encoding.utf8)!
-                let jsonData = datastring.replacingOccurrences(of: "null", with: "\"\"");//JSONSerialization 不能解析null 替换null为“”字符串
-                let dataJson = jsonData.data(using: String.Encoding.utf8);
-                
-                print("response:"+String(data:dataJson!, encoding:String.Encoding.utf8)!);
-                
-                if(String(data:dataJson!, encoding:String.Encoding.utf8)!.hasPrefix("{")||String(data:dataJson!, encoding:String.Encoding.utf8)!.hasPrefix("[")){
-                    let dict = try! JSONSerialization.jsonObject(with: dataJson!, options: JSONSerialization.ReadingOptions.mutableLeaves)
-                    if(((dict as AnyObject).value(forKey: "code") as AnyObject).integerValue == 1){
-                        success(dict as AnyObject)
-                    }else{
-                        if(((dict as AnyObject).value(forKey: "code") as AnyObject).integerValue == 0){
-                            hudHidden();
-                            hudShowText(message: (dict as AnyObject).value(forKey: "message") as! String);
-                        }
-                        errorBlock(error)
-                    }
-                }else{
-                    hudShowText(message: "请求失败");
-                    errorBlock(error)
-                }
-
-//                let datastring: String = String(data:data!, encoding:String.Encoding.utf8)!
-//                
-//                let jsonData = datastring.replacingOccurrences(of: "(", with: "");
-//                let json = jsonData.replacingOccurrences(of: ")", with: "")
-//                let dict = try! JSONSerialization.jsonObject(with: json.data(using: String.Encoding.utf8)!,options: JSONSerialization.ReadingOptions.mutableContainers)
-//                print(dict)
-//                if(!(dict as AnyObject).isEqual(nil)){
-//                    success(dict)
-//                }else{
-//                    errorBlock(error)
-//                }
+                self.handleReponseData(data:data, error: error, success: { (succData:AnyObject?) in
+                    success(succData);
+                }, errorBlock: { (err:Error?) in
+                    errorBlock(err);
+                })
             })
         }
         task.resume()
     }
     
-    
+    /// POST请求体拼接
+    ///
+    /// - Parameter params: 请求参数
+    /// - Returns: 返回拼装好的请求体
     private func postBody(params:NSMutableDictionary) ->Data?{
         var body = "";
         if params.allKeys.count<=0 {
@@ -167,6 +136,43 @@ class IENetWorkRequest: NSObject {
             
         }
         return body.data(using: String.Encoding.utf8);
+    }
+    
+    
+    /// 请求返回的数据处理方法
+    ///
+    /// - Parameters:
+    ///   - data: 返回的数据
+    ///   - error: 错误请求信息
+    ///   - success: 返回正确信息
+    ///   - errorBlock: 返回错误信息
+    private func handleReponseData(data:Data?,error:Error?,success:@escaping (AnyObject?) ->Void,errorBlock:@escaping (Error?) ->Void) ->Void{
+        hudHidden();
+        if(data==nil){
+            hudShowText(message: "请求失败");
+            errorBlock(error)
+            return;
+        }
+        let datastring: String = String(data:data!, encoding:String.Encoding.utf8)!
+        let jsonData = datastring.replacingOccurrences(of: "null", with: "\"\"");//JSONSerialization 不能解析null 替换null为“”字符串
+        let dataJson = jsonData.data(using: String.Encoding.utf8);
+        
+        print("response:"+String(data:dataJson!, encoding:String.Encoding.utf8)!);
+        
+        if(String(data:dataJson!, encoding:String.Encoding.utf8)!.hasPrefix("{")||String(data:dataJson!, encoding:String.Encoding.utf8)!.hasPrefix("[")){
+            let dict = try! JSONSerialization.jsonObject(with: dataJson!, options: JSONSerialization.ReadingOptions.mutableLeaves)
+            if(((dict as AnyObject).value(forKey: "code") as AnyObject).integerValue == 1){
+                success(dict as AnyObject)
+            }else{
+                if(((dict as AnyObject).value(forKey: "code") as AnyObject).integerValue == 0){
+                    hudShowText(message: (dict as AnyObject).value(forKey: "message") as! String);
+                }
+                errorBlock(error)
+            }
+        }else{
+            hudShowText(message: "请求失败");
+            errorBlock(error)
+        }
     }
 
 }

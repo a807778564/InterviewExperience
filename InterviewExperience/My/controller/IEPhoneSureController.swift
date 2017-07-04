@@ -66,10 +66,12 @@ class IEPhoneSureController: IEBaseController {
             self.view.showTost(text: "请输入短信验证码!");
             return;
         }
-        
+        let param = NSMutableDictionary();
+        param.setValue(self.createParam, forKey: "type");
+        param.setValue(self.phoneNumber.text, forKey: "phone");
         SMSSDK.commitVerificationCode(self.messageCode.text, phoneNumber: self.phoneNumber.text, zone: "86") { (error) in
             if (error == nil){
-                self.navigationController?.pushViewController(self.createViewController(_SBName: "IEMy", identifier: "IERegisterController", param: self.phoneNumber.text), animated: true)
+                self.navigationController?.pushViewController(self.createViewController(_SBName: "IEMy", identifier: "IERegisterController", param: param), animated: true)
             }else{
                 self.view.showTost(text: "短信验证码错误！");
             }
