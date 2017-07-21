@@ -10,6 +10,8 @@
 		2C2DE28E1F0A226A00FA143F /* IESettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2DE28D1F0A226A00FA143F /* IESettingController.swift */; };
 		2C38205E1F0275BD0076210B /* IEHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38205D1F0275BD0076210B /* IEHttpManager.swift */; };
 		2C3820601F0277B40076210B /* IENetWorkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38205F1F0277B40076210B /* IENetWorkRequest.swift */; };
+		2C39FBF21F0C9AE60038E879 /* IERelaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C39FBF11F0C9AE50038E879 /* IERelaseController.swift */; };
+		2C39FBFC1F0E103D0038E879 /* IERelaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C39FBFB1F0E103D0038E879 /* IERelaseTextView.swift */; };
 		2C60579C1F0629FC0015A7D4 /* IEUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60579B1F0629FB0015A7D4 /* IEUserModel.swift */; };
 		2C60579F1F062E120015A7D4 /* IEBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60579E1F062E120015A7D4 /* IEBaseModel.swift */; };
 		2C733DE41F0B7ECA009C38EB /* IEMyNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C733DE31F0B7ECA009C38EB /* IEMyNormalCell.swift */; };
@@ -17,7 +19,6 @@
 		2CB7D09F1EFA1D2E00F4A160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7D09E1EFA1D2E00F4A160 /* Assets.xcassets */; };
 		2CB7D0A21EFA1D2E00F4A160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7D0A01EFA1D2E00F4A160 /* LaunchScreen.storyboard */; };
 		2CB7D0B01EFA260100F4A160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0AA1EFA260100F4A160 /* AppDelegate.swift */; };
-		2CB7D0B11EFA260100F4A160 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7D0AB1EFA260100F4A160 /* Info.plist */; };
 		2CB7D0B81EFA41DE00F4A160 /* IEMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0B71EFA41DE00F4A160 /* IEMainController.swift */; };
 		2CB7D0BA1EFA41F000F4A160 /* IETalkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0B91EFA41F000F4A160 /* IETalkController.swift */; };
 		2CB7D0BC1EFA41FF00F4A160 /* IEMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D0BB1EFA41FF00F4A160 /* IEMessageController.swift */; };
@@ -46,6 +47,8 @@
 		2C2DE28D1F0A226A00FA143F /* IESettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IESettingController.swift; sourceTree = "<group>"; };
 		2C38205D1F0275BD0076210B /* IEHttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEHttpManager.swift; sourceTree = "<group>"; };
 		2C38205F1F0277B40076210B /* IENetWorkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IENetWorkRequest.swift; sourceTree = "<group>"; };
+		2C39FBF11F0C9AE50038E879 /* IERelaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IERelaseController.swift; sourceTree = "<group>"; };
+		2C39FBFB1F0E103D0038E879 /* IERelaseTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IERelaseTextView.swift; sourceTree = "<group>"; };
 		2C60579B1F0629FB0015A7D4 /* IEUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEUserModel.swift; sourceTree = "<group>"; };
 		2C60579E1F062E120015A7D4 /* IEBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEBaseModel.swift; sourceTree = "<group>"; };
 		2C733DE31F0B7ECA009C38EB /* IEMyNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEMyNormalCell.swift; sourceTree = "<group>"; };
@@ -110,6 +113,39 @@
 			path = Http;
 			sourceTree = "<group>";
 		};
+		2C39FBED1F0C9AB90038E879 /* Relase */ = {
+			isa = PBXGroup;
+			children = (
+				2C39FBEE1F0C9AB90038E879 /* Controllers */,
+				2C39FBEF1F0C9AB90038E879 /* Models */,
+				2C39FBF01F0C9AB90038E879 /* Views */,
+			);
+			path = Relase;
+			sourceTree = "<group>";
+		};
+		2C39FBEE1F0C9AB90038E879 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C39FBF11F0C9AE50038E879 /* IERelaseController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2C39FBEF1F0C9AB90038E879 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C39FBF01F0C9AB90038E879 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C39FBFB1F0E103D0038E879 /* IERelaseTextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2C60579A1F0629B40015A7D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +185,7 @@
 			children = (
 				2CB7D0AC1EFA260100F4A160 /* Main */,
 				2CB7D0AF1EFA260100F4A160 /* Talk */,
+				2C39FBED1F0C9AB90038E879 /* Relase */,
 				2CB7D0AD1EFA260100F4A160 /* Message */,
 				2CB7D0AE1EFA260100F4A160 /* My */,
 				2CB7D0CA1EFB51FF00F4A160 /* Enum */,
@@ -420,7 +457,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CB7D0B11EFA260100F4A160 /* Info.plist in Resources */,
 				2CB7D0A21EFA1D2E00F4A160 /* LaunchScreen.storyboard in Resources */,
 				2CB7D0D41EFB717A00F4A160 /* IEMy.storyboard in Resources */,
 				2CB7D09F1EFA1D2E00F4A160 /* Assets.xcassets in Resources */,
@@ -491,8 +527,10 @@
 				2CB7D0BA1EFA41F000F4A160 /* IETalkController.swift in Sources */,
 				2CB7D0D21EFB710400F4A160 /* IELoginController.swift in Sources */,
 				2CB7D0D81EFB9B0000F4A160 /* IERegisterController.swift in Sources */,
+				2C39FBFC1F0E103D0038E879 /* IERelaseTextView.swift in Sources */,
 				2CB7D0BE1EFA421100F4A160 /* IEMyController.swift in Sources */,
 				2CB7D0C61EFA649100F4A160 /* IEBaseController.swift in Sources */,
+				2C39FBF21F0C9AE60038E879 /* IERelaseController.swift in Sources */,
 				2C60579C1F0629FC0015A7D4 /* IEUserModel.swift in Sources */,
 				2C2DE28E1F0A226A00FA143F /* IESettingController.swift in Sources */,
 				2C3820601F0277B40076210B /* IENetWorkRequest.swift in Sources */,

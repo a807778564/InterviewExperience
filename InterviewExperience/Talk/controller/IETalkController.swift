@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IETalkController: UIViewController {
+class IETalkController: IEBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

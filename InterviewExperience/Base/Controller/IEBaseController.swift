@@ -16,7 +16,7 @@ class IEBaseController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage.imageWithColor(color: RGBA(red: 47, green: 186, blue: 163, alpha: 1), size: CGSize(width: ScreenWidth, height: 64)), for: UIBarMetrics.default);
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage.imageWithColor(color: RGBA(red: 47, green: 186, blue: 163, alpha: 0.8), size: CGSize(width: ScreenWidth, height: 64)), for: UIBarMetrics.default);
 
         self.navigationController?.navigationBar.titleTextAttributes = NSDictionary(object: UIColor.white, forKey: NSForegroundColorAttributeName as NSCopying) as? [String : Any];
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IEMessageController: UIViewController {
+class IEMessageController: IEBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

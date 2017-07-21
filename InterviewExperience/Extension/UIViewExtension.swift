@@ -23,6 +23,17 @@ extension UIImage{
     }
 }
 
+extension String {
+    //获取子字符串
+    func substingInRange(r: Range<Int>) -> String? {
+        if r.lowerBound < 0 || r.upperBound > self.characters.count{
+            return nil
+        }
+        let startIndex = self.index(self.startIndex, offsetBy:r.lowerBound)
+        let endIndex   = self.index(self.startIndex, offsetBy:r.upperBound)
+        return self.substring(with:startIndex..<endIndex)
+    }
+}
 
 extension UILabel{
     
@@ -32,6 +43,25 @@ extension UILabel{
         label.textColor = textColor;
         label.font = UIFont.systemFont(ofSize:font);
         return label;
+    }
+    
+}
+
+extension UIButton{
+    
+    class func button(normalImage:String,heightImage:String) ->UIButton{
+        let btn = UIButton(type: UIButtonType.custom);
+        btn.setImage(UIImage(named:normalImage), for: UIControlState.normal);
+        btn.setImage(UIImage(named:heightImage), for: UIControlState.highlighted);
+        return btn;
+    }
+    
+    class func button(title:String,font:CGFloat,color:UIColor) ->UIButton{
+        let btn = UIButton(type: UIButtonType.custom);
+        btn.setTitle(title, for: UIControlState.normal);
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: font);
+        btn.setTitleColor(color, for: UIControlState.normal);
+        return btn;
     }
     
 }

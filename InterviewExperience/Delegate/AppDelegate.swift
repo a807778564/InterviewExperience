@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate {
 
     var window: UIWindow?
     
@@ -24,12 +24,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //tab 背景
         let tabBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: 49));
         tabBackgroundView.backgroundColor = UIColor.white;
-        tabController.tabBar.insertSubview(tabBackgroundView, at: 0);
+        tabController.tabBar.insertSubview(tabBackgroundView, at: 0);//ie_tabar_add
         tabController.viewControllers = initChilControllers() as? [UIViewController];
+        tabController.delegate = self as UITabBarControllerDelegate;
         tabController.tabBar.tintColor = RGBA(red: 47,green: 186,blue: 163,alpha: 1);
         self.window?.rootViewController = tabController;
         self.window?.makeKeyAndVisible();
         return true
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+
+        if ((viewController.title?.caseInsensitiveCompare("RELASE")) == ComparisonResult.orderedSame) {
+            tabBarController.present(UINavigationController(rootViewController: IERelaseController()), animated: true, completion: nil);
+            return false;
+        }
+        return true;
     }
     
     func initChilControllers() -> NSMutableArray {
@@ -43,6 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         controllers.add(UINavigationController(rootViewController: talk));
         talk.tabBarItem = UITabBarItem(title:"话题", image: UIImage(named:"ie_tabbar_message_normal")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), selectedImage: UIImage(named:"ie_tabbar_message_selected")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal));
         talk.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -4);
+        
+        let add = IEBaseController();
+        add.title = "RELASE";
+        controllers.add(UINavigationController(rootViewController: add));
+        add.tabBarItem = UITabBarItem(title:"", image: UIImage(named:"ie_tabar_add")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), selectedImage: UIImage(named:"ie_tabar_add")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal));
+        add.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
         
         let message = IEMessageController();
         controllers.add(UINavigationController(rootViewController: message));
