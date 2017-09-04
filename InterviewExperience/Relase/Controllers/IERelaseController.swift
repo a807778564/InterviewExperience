@@ -13,6 +13,8 @@ class IERelaseController: IEBaseController,UITextViewDelegate {
     var contentTitle:UITextField!;
     var content:UITextView!;
     var conPlace:UILabel!;
+    var toolBar:IERelaseToolBarView = IERelaseToolBarView();
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,10 +75,17 @@ class IERelaseController: IEBaseController,UITextViewDelegate {
         let edit = UIMenuItem(title: "编辑", action: #selector(editText));
         UIMenuController.shared.menuItems = [edit];
         
+        self.view.addSubview(self.toolBar)
+        self.toolBar.mas_makeConstraints { (make) in
+            make?.leading.and().trailing().equalTo()(self.view);
+            make?.height.offset()(44);
+            make?.bottom.equalTo()(self.view.mas_bottom);
+        }
+        
     }
     
     func editText() ->Void{
-        print(self.content.text.substingInRange(r: self.content.selectedRange.location..<self.content.selectedRange.length) as Any);
+        print(self.content.text.substingInRange(r: self.content.selectedRange.location..<(self.content.selectedRange.length+self.content.selectedRange.location)) ?? "");
     }
     
     func textViewDidChange(_ textView: UITextView) {

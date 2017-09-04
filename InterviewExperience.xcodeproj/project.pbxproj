@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1E0C9C1F53F2D9009AECB2 /* IERelaseToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1E0C9B1F53F2D9009AECB2 /* IERelaseToolBarView.swift */; };
 		2C2DE28E1F0A226A00FA143F /* IESettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2DE28D1F0A226A00FA143F /* IESettingController.swift */; };
 		2C38205E1F0275BD0076210B /* IEHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38205D1F0275BD0076210B /* IEHttpManager.swift */; };
 		2C3820601F0277B40076210B /* IENetWorkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38205F1F0277B40076210B /* IENetWorkRequest.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		052841A91C89B1AD44BD399F /* Pods-InterviewExperience.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewExperience.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewExperience/Pods-InterviewExperience.debug.xcconfig"; sourceTree = "<group>"; };
+		2C1E0C9B1F53F2D9009AECB2 /* IERelaseToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IERelaseToolBarView.swift; sourceTree = "<group>"; };
 		2C2DE28D1F0A226A00FA143F /* IESettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IESettingController.swift; sourceTree = "<group>"; };
 		2C38205D1F0275BD0076210B /* IEHttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEHttpManager.swift; sourceTree = "<group>"; };
 		2C38205F1F0277B40076210B /* IENetWorkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IENetWorkRequest.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				2C39FBFB1F0E103D0038E879 /* IERelaseTextView.swift */,
+				2C1E0C9B1F53F2D9009AECB2 /* IERelaseToolBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CB7D0B81EFA41DE00F4A160 /* IEMainController.swift in Sources */,
+				2C1E0C9C1F53F2D9009AECB2 /* IERelaseToolBarView.swift in Sources */,
 				2CB7D0D61EFB9AC600F4A160 /* IEPhoneSureController.swift in Sources */,
 				2CB7D0D01EFB62B900F4A160 /* IEMyLoginCell.swift in Sources */,
 				2CB7D0CC1EFB525900F4A160 /* IEEnumType.swift in Sources */,
